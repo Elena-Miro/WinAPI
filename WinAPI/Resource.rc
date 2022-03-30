@@ -50,13 +50,19 @@ END
 // Dialog
 //
 
-IDD_DIALOG1 DIALOGEX 0, 0, 307, 94
-STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+IDD_DIALOG1 DIALOGEX 0, 0, 307, 102
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Окно диалога"
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
-    DEFPUSHBUTTON   "OK",IDOK,198,73,50,14
-    PUSHBUTTON      "Cancel",IDCANCEL,250,73,50,14
+    DEFPUSHBUTTON   "OK",IDOK,198,81,50,14
+    PUSHBUTTON      "E&xit",IDCANCEL,248,81,50,14
+    LTEXT           "Login",IDC_LOGIN,8,8,18,8
+    EDITTEXT        IDC_EDIT_LOGIN,7,20,291,14,ES_CENTER | ES_AUTOHSCROLL
+    LTEXT           "Password",IDC_STATIC,7,44,32,8
+    EDITTEXT        IDC_EDIT_PASSWORD,7,57,291,14,ES_CENTER | ES_AUTOHSCROLL
+    PUSHBUTTON      "Copy",IDC_BUTTON_COPY,7,81,50,14
+    PUSHBUTTON      "Set title",IDC_BUTTON_SET_TITLE,60,81,50,14
 END
 
 
@@ -71,9 +77,9 @@ BEGIN
     IDD_DIALOG1, DIALOG
     BEGIN
         LEFTMARGIN, 7
-        RIGHTMARGIN, 300
+        RIGHTMARGIN, 298
         TOPMARGIN, 7
-        BOTTOMMARGIN, 87
+        BOTTOMMARGIN, 95
     END
 END
 #endif    // APSTUDIO_INVOKED
@@ -88,6 +94,16 @@ IDD_DIALOG1 AFX_DIALOG_LAYOUT
 BEGIN
     0
 END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_ICON1               ICON                    "apple_fruit_food_icon_218349.ico"
 
 #endif    // Russian (Russia) resources
 /////////////////////////////////////////////////////////////////////////////
