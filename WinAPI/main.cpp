@@ -23,7 +23,7 @@ BOOL CALLBACK DlgProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lparam)
 		SendMessageA(GetDlgItem(hwnd, IDC_EDIT_PASSWORD),WM_SETTEXT, 0, (LPARAM)sz_password_invitation);
 	}
 		break;
-	case WM_COMMAND:
+	case WM_COMMAND: //отправляется в оконную процедуру:пользователь выбирает элемент из меню
 	{
 		
 		
@@ -35,9 +35,19 @@ BOOL CALLBACK DlgProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lparam)
 			//он получает уведомления
 			//уведомления -это самые обычные сообщения
 			//когда мы становимся в текстовое поле, то это текстовое поле получает уведомление EN_SETFOCUS
+			CONST INT SIZE = 256;
+			CHAR sz_buffer[SIZE]{};
+			HWND hEditLogin = GetDlgItem(hwnd, IDC_EDIT_LOGIN);
+			SendMessage(hEditLogin, WM_GETTEXT, SIZE, (LPARAM)sz_buffer);
 			switch (HIWORD(wParam))
 			{
-			case EN_SETFOCUS:SendMessage(GetDlgItem(hwnd, IDC_EDIT_LOGIN), WM_SETTEXT, 0, (LPARAM)""); break;
+			case EN_SETFOCUS:
+				if (strcmp(sz_buffer, sz_login_invitation) == 0)
+					SendMessage(hEditLogin, WM_SETTEXT, 0, (LPARAM)""); break;
+				
+			case EN_KILLFOCUS:
+				if(strlen(sz_buffer)==0)
+				SendMessage(hEditLogin, WM_SETTEXT, 0, (LPARAM)sz_login_invitation); break;
 			}
 		}
 		break;
