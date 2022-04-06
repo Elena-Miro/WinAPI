@@ -4,6 +4,7 @@
 CHAR sz_login_invitation[] = "¬ведите логин";
 CHAR sz_password_invitation[] = "¬ведите пароль";
 
+
 BOOL CALLBACK DlgProc(HWND hwnd, UINT uMgs, WPARAM wParam, LPARAM lparam);
 INT WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInst, LPSTR lpCmdLine, INT nCmdShow)
 {
