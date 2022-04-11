@@ -141,6 +141,19 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Resource.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="coffee_tea_cup_beverage_espresso_drink_cafe_coffee_cup_icon_211086.ico" />
+    <Image Include="cup_120827.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Cursor.cur" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
